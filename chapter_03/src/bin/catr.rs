@@ -38,7 +38,6 @@ fn main() {
     let file: Vec<&String> = matches.get_many("file").unwrap().collect();
     let files: Vec<String> = file.into_iter().map(|x| x.to_string()).collect();
 
-
     if files.get(0).unwrap() == &"-".to_string() {
         for line in io::BufReader::new(io::stdin()).lines().into_iter() {
             println!("{}", line.unwrap());
